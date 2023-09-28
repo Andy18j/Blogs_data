@@ -3,9 +3,11 @@ const { connection } = require("./config/db")
 require("dotenv").config()
 const {userRouter} = require("./Routes/user.route")
 const {blogRouter}  = require("./Routes/blog.route")
+const cors = require("cors")
 
 const app = express()
 app.use(express.json())
+app.use(cors())
 
 
 app.use("",userRouter)
