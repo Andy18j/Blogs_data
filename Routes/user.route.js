@@ -39,7 +39,7 @@ userRouter.post("/api/login",async(req,res)=>{
     
             const ispasscorrect = await bcrypt.compare(password,isuserpresent.password)
     
-            const token =  jwt.sign({userId:isuserpresent._id},"secret",{
+            const token =  jwt.sign({userId:isuserpresent._id},"masai",{
                 expiresIn:"5min"
             })
             if (ispasscorrect){
